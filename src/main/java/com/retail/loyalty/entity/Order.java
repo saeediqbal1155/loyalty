@@ -15,4 +15,5 @@ public class Order {
     private Long rewardId;
     private String status;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
