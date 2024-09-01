@@ -22,7 +22,7 @@ public class OrderController {
         return orderService.getAllOrders();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public Mono<Order> getOrderById(@PathVariable Long id) {
         return orderService.getOrderById(id);
     }
@@ -33,12 +33,12 @@ public class OrderController {
         return orderService.createOrder(order);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Mono<Order> updateOrder(@PathVariable Long id, @RequestBody Order order) {
         return orderService.updateOrder(id, order);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/cancel/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deleteOrder(@PathVariable Long id) {
         return orderService.deleteOrder(id);
