@@ -29,4 +29,8 @@ public class PointsServiceImpl implements PointsService {
     public Mono<Integer> redeemPoints(Points points) {
         return pointsRepository.redeemPoints(points.getUserId(), points.getPoints());
     }
+
+    public Flux<Points> getTransactionHistory(Long userId) {
+        return pointsRepository.findByUserId(userId);
+    }
 }

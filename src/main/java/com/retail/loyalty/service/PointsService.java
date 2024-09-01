@@ -10,4 +10,6 @@ public interface PointsService {
     Mono<Points> addPoints(Points points);
 
     Mono<Integer> redeemPoints(Points points);
+
+    public Flux<Points> getTransactionHistory(Long userId);
 }

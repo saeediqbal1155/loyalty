@@ -30,5 +30,10 @@ public class PointsController {
         return pointsService.redeemPoints(points);
     }
 
+    @GetMapping("/history/{userId}")
+    public Flux<Points> getTransactionHistory(@PathVariable Long userId) {
+        return pointsService.getTransactionHistory(userId);
+    }
+
 }
 
