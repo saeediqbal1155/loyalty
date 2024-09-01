@@ -8,4 +8,6 @@ public interface PointsService {
     Flux<Points> getPointsByUserId(Long userId);
 
     Mono<Points> addPoints(Points points);
+
+    Mono<Integer> redeemPoints(Points points);
 }

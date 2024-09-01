@@ -24,4 +24,9 @@ public class PointsServiceImpl implements PointsService {
     public Mono<Points> addPoints(Points points) {
         return pointsRepository.save(points);
     }
+
+    @Override
+    public Mono<Integer> redeemPoints(Points points) {
+        return pointsRepository.redeemPoints(points.getUserId(), points.getPoints());
+    }
 }

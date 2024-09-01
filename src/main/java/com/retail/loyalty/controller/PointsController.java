@@ -24,5 +24,11 @@ public class PointsController {
     public Mono<Points> addPoints(@RequestBody Points points) {
         return pointsService.addPoints(points);
     }
+
+    @PostMapping("/redeem")
+    public Mono<Integer> redeemPoints(@RequestBody Points points) {
+        return pointsService.redeemPoints(points);
+    }
+
 }
 
