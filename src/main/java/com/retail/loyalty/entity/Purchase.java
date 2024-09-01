@@ -14,4 +14,5 @@ public class Purchase {
     private Long userId;
     private Double amount;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
