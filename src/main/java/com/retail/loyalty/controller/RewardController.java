@@ -3,7 +3,6 @@ package com.retail.loyalty.controller;
 import com.retail.loyalty.entity.Reward;
 import com.retail.loyalty.service.RewardService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
