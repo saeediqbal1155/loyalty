@@ -20,10 +20,10 @@ public class SecurityConfig {
                         .pathMatchers("/auth/**").permitAll()
                         .anyExchange().authenticated()
                 )
+                .oauth2Login(Customizer.withDefaults())  // Enable OAuth2 login for SSO
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(Customizer.withDefaults())
                 );
-
         return http.build();
     }
 
