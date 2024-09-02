@@ -3,7 +3,6 @@ package com.retail.loyalty.controller.v1;
 import com.retail.loyalty.entity.Points;
 import com.retail.loyalty.service.PointsService;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -15,9 +14,9 @@ public class PointsController extends BaseController {
         this.pointsService = pointsService;
     }
 
-    @GetMapping("/{userId}")
-    public Flux<Points> getPoints(@PathVariable Long userId) {
-        return pointsService.getPointsByUserId(userId);
+    @GetMapping("/{username}")
+    public Mono<Points> getPoints(@PathVariable String username) {
+        return pointsService.getPointsByUsername(username);
     }
 
     @PostMapping("/add")
@@ -30,10 +29,6 @@ public class PointsController extends BaseController {
         return pointsService.redeemPoints(points);
     }
 
-    @GetMapping("/history/{userId}")
-    public Flux<Points> getTransactionHistory(@PathVariable Long userId) {
-        return pointsService.getTransactionHistory(userId);
-    }
 
 }
 
