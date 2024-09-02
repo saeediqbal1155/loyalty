@@ -41,4 +41,9 @@ public class RewardController extends BaseController {
     public Mono<Void> deleteReward(@PathVariable Long id) {
         return rewardService.deleteReward(id);
     }
+
+    @GetMapping("/{username}/{rewardId}")
+    public Mono<Boolean> redeemReward(@PathVariable String username, @PathVariable Long rewardId) {
+        return rewardService.redeemReward(username, rewardId);
+    }
 }

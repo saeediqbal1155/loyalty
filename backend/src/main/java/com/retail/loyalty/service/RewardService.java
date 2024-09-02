@@ -14,4 +14,6 @@ public interface RewardService {
     Mono<Reward> updateReward(Long id, Reward reward);
 
     Mono<Void> deleteReward(Long id);
+
+    Mono<Boolean> redeemReward(String username, Long rewardId);
 }
