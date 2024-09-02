@@ -1,4 +1,4 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
 import com.retail.loyalty.entity.Points;
 import com.retail.loyalty.service.PointsService;
@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/points")
-public class PointsController {
+public class PointsController extends BaseController {
     private final PointsService pointsService;
 
     public PointsController(PointsService pointsService) {

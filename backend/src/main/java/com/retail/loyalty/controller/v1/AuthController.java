@@ -1,4 +1,4 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
 import com.retail.loyalty.entity.User;
 import com.retail.loyalty.service.UserService;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/auth")
 @AllArgsConstructor
-public class AuthController {
+public class AuthController extends BaseController {
     private final UserService userService;
     private final JwtUtil jwtUtil;
     private final BCryptPasswordEncoder passwordEncoder;
@@ -22,7 +22,7 @@ public class AuthController {
         return userService.registerUser(user);
     }
 
-    @PostMapping("/login")
+/*    @PostMapping("/login")
     public Mono<String> login(@RequestBody AuthRequest request) {
         return userService.findByUsername(request.getUsername())
                 .flatMap(user -> {
@@ -33,6 +33,6 @@ public class AuthController {
                         return Mono.error(new RuntimeException("Invalid credentials"));
                     }
                 });
-    }
+    }*/
 }
 

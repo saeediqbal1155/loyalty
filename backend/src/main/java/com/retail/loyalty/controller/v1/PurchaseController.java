@@ -1,6 +1,6 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
-import com.retail.loyalty.entity.Purchase;
+import com.retail.loyalty.entity.dto.PurchaseDTO;
 import com.retail.loyalty.service.PurchaseService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -9,25 +9,25 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/purchases")
+@RequestMapping("/Purchases")
 @AllArgsConstructor
-public class PurchaseController {
+public class PurchaseController extends BaseController {
 
     private final PurchaseService purchaseService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Purchase> recordPurchase(@RequestBody Purchase purchase) {
-        return purchaseService.recordPurchase(purchase);
+    public Mono<PurchaseDTO> recordPurchase(@RequestBody PurchaseDTO purchaseDTO) {
+        return purchaseService.recordPurchase(purchaseDTO);
     }
 
     @GetMapping("/{userId}")
-    public Flux<Purchase> getPurchasesByUserId(@PathVariable Long userId) {
+    public Flux<PurchaseDTO> getPurchasesByUserId(@PathVariable Long userId) {
         return purchaseService.getPurchasesByUserId(userId);
     }
 
-    @GetMapping("/details/{purchaseId}")
-    public Mono<Purchase> getPurchaseDetails(@PathVariable Long purchaseId) {
+    @GetMapping("/details/{PurchaseId}")
+    public Mono<PurchaseDTO> getPurchaseDetails(@PathVariable Long purchaseId) {
         return purchaseService.getPurchaseDetails(purchaseId);
     }
 }

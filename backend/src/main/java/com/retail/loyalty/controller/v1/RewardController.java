@@ -1,4 +1,4 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
 import com.retail.loyalty.entity.Reward;
 import com.retail.loyalty.service.RewardService;
@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/rewards")
 @AllArgsConstructor
-public class RewardController {
+public class RewardController extends BaseController {
 
     private final RewardService rewardService;
 

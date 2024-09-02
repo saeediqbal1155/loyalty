@@ -1,13 +1,14 @@
 package com.retail.loyalty.service;
 
 import com.retail.loyalty.entity.Purchase;
+import com.retail.loyalty.entity.dto.PurchaseDTO;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface PurchaseService {
-    Mono<Purchase> recordPurchase(Purchase purchase);
+    Mono<PurchaseDTO> recordPurchase(PurchaseDTO purchase);
 
-    Flux<Purchase> getPurchasesByUserId(Long userId);
+    Flux<PurchaseDTO> getPurchasesByUserId(Long userId);
 
-    Mono<Purchase> getPurchaseDetails(Long purchaseId);
+    Mono<PurchaseDTO> getPurchaseDetails(Long purchaseId);
 }

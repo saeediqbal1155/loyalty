@@ -1,4 +1,4 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
 import com.retail.loyalty.entity.Order;
 import com.retail.loyalty.service.OrderService;
@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/orders")
 @AllArgsConstructor
-public class OrderController {
+public class OrderController extends BaseController {
 
     private final OrderService orderService;
 

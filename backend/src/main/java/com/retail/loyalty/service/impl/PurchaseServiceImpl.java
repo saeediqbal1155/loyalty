@@ -1,6 +1,8 @@
 package com.retail.loyalty.service.impl;
 
 import com.retail.loyalty.entity.Purchase;
+import com.retail.loyalty.entity.dto.PurchaseDTO;
+import com.retail.loyalty.entity.mapper.PurchaseMapper;
 import com.retail.loyalty.repository.PurchaseRepository;
 import com.retail.loyalty.service.PurchaseService;
 import lombok.AllArgsConstructor;
@@ -15,17 +17,19 @@ public class PurchaseServiceImpl implements PurchaseService {
     private final PurchaseRepository purchaseRepository;
 
     @Override
-    public Mono<Purchase> recordPurchase(Purchase purchase) {
-        return purchaseRepository.save(purchase);
+    public Mono<PurchaseDTO> recordPurchase(PurchaseDTO purchaseDTO) {
+        Purchase purchase = PurchaseMapper.MAPPER.toEntity(purchaseDTO);
+        Mono<Purchase> purchase1 = purchaseRepository.save(purchase);
+        return purchase1.map(PurchaseMapper.MAPPER::toDTO);
     }
 
     @Override
-    public Flux<Purchase> getPurchasesByUserId(Long userId) {
-        return purchaseRepository.findByUserId(userId);
+    public Flux<PurchaseDTO> getPurchasesByUserId(Long userId) {
+        return purchaseRepository.findByUserId(userId).map(PurchaseMapper.MAPPER::toDTO);
     }
 
     @Override
-    public Mono<Purchase> getPurchaseDetails(Long purchaseId) {
-        return purchaseRepository.findById(purchaseId);
+    public Mono<PurchaseDTO> getPurchaseDetails(Long purchaseId) {
+        return purchaseRepository.findById(purchaseId).map(PurchaseMapper.MAPPER::toDTO);
     }
 }

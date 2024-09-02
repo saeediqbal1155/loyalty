@@ -1,4 +1,4 @@
-package com.retail.loyalty.controller;
+package com.retail.loyalty.controller.v1;
 
 import com.retail.loyalty.entity.Campaign;
 import com.retail.loyalty.service.CampaignService;
@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/campaigns")
 @AllArgsConstructor
-public class CampaignController {
+public class CampaignController extends BaseController {
 
     private final CampaignService campaignService;
 
