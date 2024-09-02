@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PointsDTO {
     private Long id;
-    private String username;
+    private Long userId;
     private int points;
 }
 

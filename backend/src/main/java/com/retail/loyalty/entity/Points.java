@@ -9,6 +9,6 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Points {
     @Id
     private Long id;
-    private String username;
+    private Long userId;
     private int points;
 }

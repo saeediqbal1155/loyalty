@@ -7,7 +7,7 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Mono;
 
 public interface PointsRepository extends ReactiveCrudRepository<Points, Long> {
-    Mono<Points> findByUsername(String username);
+    Mono<Points> findByUserId(Long userId);
     @Query("UPDATE points SET balance = balance - :points WHERE user_id = :userId AND balance >= :points")
-    Mono<Integer> redeemPoints(@Param("username") String username, @Param("points") int points);
+    Mono<Integer> redeemPoints(@Param("userId") Long userId, @Param("points") int points);
 }
