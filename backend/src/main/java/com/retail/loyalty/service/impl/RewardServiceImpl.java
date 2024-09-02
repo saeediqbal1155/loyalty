@@ -1,6 +1,7 @@
-package com.retail.loyalty.repository;
+package com.retail.loyalty.service.impl;
 
 import com.retail.loyalty.entity.Reward;
+import com.retail.loyalty.repository.RewardRepository;
 import com.retail.loyalty.service.RewardService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
