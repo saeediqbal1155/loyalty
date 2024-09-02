@@ -6,6 +6,7 @@ import com.retail.loyalty.repository.RewardRepository;
 import com.retail.loyalty.service.PointsService;
 import com.retail.loyalty.service.RewardService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,6 +17,7 @@ public class RewardServiceImpl implements RewardService {
 
     private final RewardRepository rewardRepository;
     private final PointsService pointsService;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Mono<Reward> createReward(Reward reward) {

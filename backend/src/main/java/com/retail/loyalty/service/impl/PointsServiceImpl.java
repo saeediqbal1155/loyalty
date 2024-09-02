@@ -6,6 +6,7 @@ import com.retail.loyalty.repository.PointsRepository;
 import com.retail.loyalty.service.PointsService;
 import com.retail.loyalty.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -16,6 +17,7 @@ import java.util.Objects;
 public class PointsServiceImpl implements PointsService {
     private final PointsRepository pointsRepository;
     private final UserService userService;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Mono<Points> getPointsByUsername(String username) {

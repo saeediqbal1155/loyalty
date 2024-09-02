@@ -4,6 +4,7 @@ import com.retail.loyalty.entity.Campaign;
 import com.retail.loyalty.repository.CampaignRepository;
 import com.retail.loyalty.service.CampaignService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -13,6 +14,7 @@ import reactor.core.publisher.Mono;
 public class CampaignServiceImpl implements CampaignService {
 
     private final CampaignRepository campaignRepository;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Flux<Campaign> getActiveCampaigns() {

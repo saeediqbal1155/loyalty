@@ -6,6 +6,7 @@ import com.retail.loyalty.entity.mapper.PurchaseMapper;
 import com.retail.loyalty.repository.PurchaseRepository;
 import com.retail.loyalty.service.PurchaseService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
 public class PurchaseServiceImpl implements PurchaseService {
 
     private final PurchaseRepository purchaseRepository;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Mono<PurchaseDTO> recordPurchase(PurchaseDTO purchaseDTO) {

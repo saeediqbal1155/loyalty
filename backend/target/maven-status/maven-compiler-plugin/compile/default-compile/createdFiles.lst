@@ -2,6 +2,7 @@ com/retail/loyalty/entity/Purchase.class
 com/retail/loyalty/entity/User.class
 com/retail/loyalty/entity/mapper/PointsMapper.class
 com/retail/loyalty/repository/PointsRepository.class
+com/retail/loyalty/config/R2dbcConfig.class
 com/retail/loyalty/service/impl/RewardServiceImpl.class
 com/retail/loyalty/entity/mapper/PurchaseMapper.class
 com/retail/loyalty/entity/dto/OrderDTO.class
@@ -38,6 +39,7 @@ com/retail/loyalty/entity/Order.class
 com/retail/loyalty/service/impl/PointsServiceImpl.class
 com/retail/loyalty/service/impl/OrderServiceImpl.class
 com/retail/loyalty/controller/v1/RewardController.class
+com/retail/loyalty/controller/UserController.class
 com/retail/loyalty/util/JwtUtil.class
 com/retail/loyalty/controller/v1/CampaignController.class
 com/retail/loyalty/entity/dto/RedeemRewardDTO.class

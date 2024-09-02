@@ -4,6 +4,7 @@ import com.retail.loyalty.entity.Order;
 import com.retail.loyalty.repository.OrderRepository;
 import com.retail.loyalty.service.OrderService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Flux<Order> getAllOrders() {

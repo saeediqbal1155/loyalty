@@ -4,6 +4,7 @@ import com.retail.loyalty.entity.User;
 import com.retail.loyalty.repository.UserRepository;
 import com.retail.loyalty.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Mono;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final R2dbcEntityTemplate template;
 
     @Override
     public Mono<User> registerUser(User user) {
