@@ -4,21 +4,21 @@ import com.retail.loyalty.entity.User;
 import com.retail.loyalty.repository.UserRepository;
 import com.retail.loyalty.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Mono;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final R2dbcEntityTemplate template;
+    private final JobLauncher jobLauncher;
+    private final Job job;
 
     @Override
     public Mono<User> registerUser(User user) {
@@ -31,37 +31,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void uploadCsv(MultipartFile file) throws Exception {
-        List<User> users = new LinkedList<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
-            String headerLine = br.readLine();
-            if (headerLine == null) {
-                throw new Exception("CSV file is empty");
-            }
-
-            String[] headers = headerLine.split(",");
-            String firstColumn = headers[0].trim().toLowerCase();
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                User user = new User();
-
-                if (firstColumn.equals("username")) {
-                    user.setUsername(values[0].trim());
-                    user.setRole(values[1].trim());
-                } else if (firstColumn.equals("role")) {
-                    user.setRole(values[0].trim());
-                    user.setUsername(values[1].trim());
-                } else {
-                    throw new Exception("Invalid CSV format");
-                }
-
-                users.add(user);
-            }
-        }
-
-        userRepository.saveAll(users);
+    public void uploadCsv(String filePath) throws Exception {
+        // Launch the Spring Batch job to process the CSV file
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addString("filePath", filePath)
+                .toJobParameters();
+        jobLauncher.run(job, jobParameters);
     }
 }
-

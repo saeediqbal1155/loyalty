@@ -9,5 +9,5 @@ public interface UserService {
 
     Mono<User> findByUsername(String username);
 
-    void uploadCsv(MultipartFile file) throws Exception;
+    void uploadCsv(String filePath) throws Exception;
 }
