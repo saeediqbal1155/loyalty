@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6eb9caf1-0fd2-43f5-bf71-3b1d4aff046e" name="Changes" comment="Initial Project Creation" />
+    <list default="true" id="6eb9caf1-0fd2-43f5-bf71-3b1d4aff046e" name="Changes" comment="Initial Project Creation">
+      <change afterPath="$PROJECT_DIR$/backend/app/Controllers/FileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Database/Migrations/001_CreateUsersAndErrorsTables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/ErrorModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/UserModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Services/FileProcessingService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Config/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Config/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Config/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Config/Routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/spark" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spark" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +72,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Maven.loyalty [clean,install].executor": "Run",
     "Maven.loyalty [clean,package,install].executor": "Run",
@@ -73,6 +85,7 @@
     "Spring Boot.LoyaltyApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/saeediqbal/Documents/communicate/projects/loyalty",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,6 +100,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="LoyaltyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="loyalty" />
@@ -120,6 +139,7 @@
       <workItem from="1725261354329" duration="46000" />
       <workItem from="1725376294197" duration="595000" />
       <workItem from="1725376896922" duration="23000" />
+      <workItem from="1725377012586" duration="3720000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented Points Modification">
       <option name="closed" value="true" />
@@ -169,7 +189,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725376752240</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Initial Project Creation">
+      <option name="closed" value="true" />
+      <created>1725377147406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725377147406</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Initial Project Creation">
+      <option name="closed" value="true" />
+      <created>1725377315966</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725377315966</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
