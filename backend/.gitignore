@@ -27,7 +27,7 @@ node_modules/
 public/uploads/*
 
 # Ignore IDE specific files
-.idea/
+../.idea/
 *.sublime-project
 *.sublime-workspace
 
